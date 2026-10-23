@@ -1,7 +1,7 @@
 # VIGENERE-CIPHER
 ## EX. NO: 4
- 
-
+## NAME:E.PAVITHRA
+## REG NO:212224220072
 ## IMPLEMETATION OF VIGENERE CIPHER
  
 
@@ -30,7 +30,76 @@ STEP-8: Repeat the above steps to generate the entire cipher text.
 
 
 ## PROGRAM
+```
 
+#include <stdio.h>
+#include <string.h>
+
+// Function to perform Vigenere encryption
+void vigenereEncrypt(char *text, const char *key)
+{
+    int textLen = strlen(text);
+    int keyLen = strlen(key);
+
+    for (int i = 0; i < textLen; i++)
+    {
+        char c = text[i];
+
+        if (c >= 'A' && c <= 'Z')
+        {
+            // Encrypt uppercase letters
+            text[i] = ((c - 'A' + key[i % keyLen] - 'A') % 26) + 'A';
+        }
+        else if (c >= 'a' && c <= 'z')
+        {
+            // Encrypt lowercase letters
+            text[i] = ((c - 'a' + key[i % keyLen] - 'A') % 26) + 'a';
+        }
+    }
+}
+
+// Function to perform Vigenere decryption
+void vigenereDecrypt(char *text, const char *key)
+{
+    int textLen = strlen(text);
+    int keyLen = strlen(key);
+
+    for (int i = 0; i < textLen; i++)
+    {
+        char c = text[i];
+
+        if (c >= 'A' && c <= 'Z')
+        {
+            // Decrypt uppercase letters
+            text[i] = ((c - 'A' - (key[i % keyLen] - 'A') + 26) % 26) + 'A';
+        }
+        else if (c >= 'a' && c <= 'z')
+        {
+            // Decrypt lowercase letters
+            text[i] = ((c - 'a' - (key[i % keyLen] - 'A') + 26) % 26) + 'a';
+        }
+    }
+}
+
+int main()
+{
+    const char *key = "KEY";
+    char message[] = "Thisisasecretmessage.";
+
+    // Encrypt the message
+    vigenereEncrypt(message, key);
+    printf("Encrypted Message: %s\n", message);
+
+    // Decrypt the message back to the original
+    vigenereDecrypt(message, key);
+    printf("Decrypted Message: %s\n", message);
+
+    return 0;
+}
+
+```
 ## OUTPUT
+<img width="1917" height="1140" alt="image" src="https://github.com/user-attachments/assets/9db2de46-db42-4816-b544-df1efabc5c14" />
 
 ## RESULT
+The program is executed successfully.
