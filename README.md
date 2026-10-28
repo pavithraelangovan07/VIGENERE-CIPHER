@@ -84,7 +84,7 @@ void vigenereDecrypt(char *text, const char *key)
 int main()
 {
     const char *key = "KEY";
-    char message[] = "Thisisasecretmessage.";
+    char message[] = "pavithra";
 
     // Encrypt the message
     vigenereEncrypt(message, key);
@@ -99,7 +99,8 @@ int main()
 
 ```
 ## OUTPUT
-<img width="1917" height="1140" alt="image" src="https://github.com/user-attachments/assets/9db2de46-db42-4816-b544-df1efabc5c14" />
+<img width="1917" height="1147" alt="image" src="https://github.com/user-attachments/assets/85e0583c-4429-447c-b8d6-cb03dd89146f" />
+
 
 ## RESULT
 The program is executed successfully.
